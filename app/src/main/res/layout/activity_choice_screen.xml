@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".ChoiceScreen">
+
+    <ImageView
+        android:id="@+id/choiceScreenImage"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/yoga_svg_choice_screen"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@id/signInButton"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="ContentDescription"/>
+    
+    <TextView
+        android:id="@+id/textYog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/yog"
+        android:textSize="@dimen/splashScreenText"
+        android:fontFamily="@font/varela_round"
+        android:textStyle="bold"
+        android:textColor="@color/darkGrey"
+        app:layout_constraintLeft_toRightOf="@id/vertical8"
+        app:layout_constraintTop_toBottomOf="@id/horizontal20"/>
+
+    <TextView
+        android:id="@+id/textAI"
+        android:text="@string/ai"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/splashScreenText"
+        android:fontFamily="@font/varela_round"
+        android:textStyle="bold"
+        android:textColor="@color/purple"
+        app:layout_constraintLeft_toRightOf="@id/textYog"
+        app:layout_constraintTop_toBottomOf="@id/horizontal20" />
+
+    <Button
+        android:id="@+id/signInButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:elevation="0dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/button_signin"
+        android:text="@string/sign_in"
+        android:textColor="@color/white"
+        android:fontFamily="@font/varela_round"
+        android:textStyle="bold"
+        android:textAllCaps="false"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@id/registerButton"
+        app:layout_constraintLeft_toRightOf="@id/vertical15"
+        app:layout_constraintRight_toLeftOf="@id/vertical85" />
+
+    <Button
+        android:id="@+id/registerButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:elevation="0dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/button_register"
+        android:text="@string/register"
+        android:textColor="@color/white"
+        android:fontFamily="@font/varela_round"
+        android:textStyle="bold"
+        android:textAllCaps="false"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/vertical15"
+        app:layout_constraintRight_toLeftOf="@id/vertical85" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/vertical15"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.15" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/vertical85"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.85" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/vertical8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.08" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/horizontal20"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.20" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

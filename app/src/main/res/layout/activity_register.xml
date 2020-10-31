@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RegisterActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:navigationIcon="@drawable/ic_baseline_arrow_back_ios_24"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:id="@+id/logoText"
+        android:text="@string/register"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/darkGrey"
+        android:fontFamily="@font/varela_round"
+        android:textStyle="bold"
+        android:textSize="@dimen/splashScreenText"
+        app:layout_constraintBottom_toTopOf="@id/guidelineHorizontal32"
+        app:layout_constraintLeft_toRightOf="@id/guidelineVertical10"
+        app:layout_constraintRight_toLeftOf="@id/guidelineVertical90"/>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/editTextEmail"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="24dp"
+        app:layout_constraintLeft_toRightOf="@id/guidelineVertical10"
+        app:layout_constraintRight_toLeftOf="@id/guidelineVertical90"
+        app:layout_constraintTop_toBottomOf="@id/guidelineHorizontal32">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/ic_round_alternate_email_24"
+            android:drawablePadding="8dp"
+            android:textStyle="bold"
+            android:textColor="@android:color/black"
+            android:inputType="textEmailAddress"
+            android:fontFamily="@font/varela_round"
+            android:hint="@string/email"
+            android:textSize="16sp"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/editTextPassword"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:passwordToggleEnabled="true"
+        android:layout_marginVertical="24dp"
+        app:layout_constraintLeft_toRightOf="@id/guidelineVertical10"
+        app:layout_constraintRight_toLeftOf="@+id/guidelineVertical90"
+        app:layout_constraintTop_toBottomOf="@id/editTextEmail">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/ic_round_lock_24"
+            android:drawablePadding="8dp"
+            android:textStyle="bold"
+            android:textColor="@android:color/black"
+            android:inputType="textPassword"
+            android:hint="@string/password"
+            android:fontFamily="@font/varela_round"
+            android:textSize="16sp" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/editTextComfirmPassword"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="24dp"
+        app:layout_constraintLeft_toRightOf="@id/guidelineVertical10"
+        app:layout_constraintRight_toLeftOf="@+id/guidelineVertical90"
+        app:layout_constraintTop_toBottomOf="@id/editTextPassword">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/ic_round_lock_24"
+            android:drawablePadding="8dp"
+            android:textStyle="bold"
+            android:textColor="@android:color/black"
+            android:inputType="textPassword"
+            android:hint="@string/confirm_password"
+            android:fontFamily="@font/varela_round"
+            android:textSize="16sp" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <Button
+        android:id="@+id/buttonSignIn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:background="@drawable/button_register"
+        android:fontFamily="@font/varela_round"
+        android:text="@string/register"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toRightOf="@id/guidelineVertical10"
+        app:layout_constraintRight_toLeftOf="@id/guidelineVertical90"
+        app:layout_constraintTop_toBottomOf="@id/editTextComfirmPassword" />
+
+
+
+    <ImageButton
+        android:id="@+id/buttonGoogle"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:scaleType="centerCrop"
+        android:background="@color/white"
+        android:src="@drawable/google"
+        android:layout_marginVertical="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/guidelineVertical10"
+        app:layout_constraintRight_toLeftOf="@id/guidelineVertical90"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineHorizontal32"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.24" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineVertical10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.10"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineVertical90"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.90"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
