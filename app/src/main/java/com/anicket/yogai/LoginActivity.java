@@ -13,6 +13,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
@@ -22,7 +23,14 @@ public class LoginActivity extends AppCompatActivity {
 
     EditText mEmail,mPassword1;
     Button mSignInBtn;
+    TextInputLayout editTextEmail, editTextPassword, editTextConfirmPassword;
     FirebaseAuth fAuth;
+
+
+    private boolean validateEmail(String email){
+        String regex = "^[\\w-_\\.+]*[\\w-_\\.]\\@([\\w]+\\.)+[\\w]+[\\w]$";
+        return email.matches(regex);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,18 +48,16 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View v) {
                 String email = mEmail.getText().toString().trim();
                 String password1=mPassword1.getText().toString().trim();
+                editTextEmail = findViewById(R.id.editTextEmail);
+                editTextPassword = findViewById(R.id.editTextPassword);
 
                 //Validation Check
-                if(TextUtils.isEmpty(email)){
-                    mEmail.setError("Email is required");
+                if(!validateEmail(email)){
+                    editTextEmail.setError("Valid Email Id is required");
                     return;
                 }
                 if(TextUtils.isEmpty(password1)){
-                    mPassword1.setError("Password is required");
-                    return;
-                }
-                if(password1.length()<5 ){
-                    mPassword1.setError("Password must be greater than 4 digit");
+                    editTextPassword.setError("Incorrect Password");
                     return;
                 }
 
@@ -64,15 +70,16 @@ public class LoginActivity extends AppCompatActivity {
                             startActivity(new Intent(getApplicationContext(),TemporaryActivity.class));
                         }
                         else {
-                            mPassword1.setError(Objects.requireNonNull(task.getException()).getMessage());
+                            editTextPassword.setError(Objects.requireNonNull(task.getException()).getMessage());
                         }
                     }
                 });
             }
         });
 
-
     }
+
+
 
     public void backButton(View view) {
         finish();

@@ -8,38 +8,43 @@
     tools:context=".RegisterActivity">
 
     <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/materialToolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent"
+        android:background="@color/white"
         app:layout_constraintLeft_toLeftOf="parent"
-        android:background="@color/white">
+        app:layout_constraintTop_toTopOf="parent">
 
         <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/ic_baseline_arrow_back_ios_24"
-            android:onClick="backButton"/>
+            android:onClick="backButton" />
 
     </com.google.android.material.appbar.MaterialToolbar>
 
     <TextView
         android:id="@+id/logoText"
-        android:text="@string/register"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="@color/darkGrey"
         android:fontFamily="@font/varela_round"
-        android:textStyle="bold"
+        android:text="@string/register"
+        android:textColor="@color/darkGrey"
         android:textSize="@dimen/splashScreenText"
+        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@id/guidelineHorizontal32"
         app:layout_constraintLeft_toRightOf="@id/guidelineVertical10"
-        app:layout_constraintRight_toLeftOf="@id/guidelineVertical90"/>
+        app:layout_constraintRight_toLeftOf="@id/guidelineVertical90"
+        app:layout_constraintTop_toBottomOf="@+id/materialToolbar" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/editTextEmail"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginVertical="48dp"
+        android:layout_marginVertical="16dp"
+        app:errorEnabled="true"
+        app:errorTextAppearance="@font/varela_round"
+        app:errorTextColor="@color/darkPink"
         app:layout_constraintLeft_toRightOf="@id/guidelineVertical10"
         app:layout_constraintRight_toLeftOf="@id/guidelineVertical90"
         app:layout_constraintTop_toBottomOf="@id/guidelineHorizontal32">
@@ -64,7 +69,10 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:passwordToggleEnabled="true"
-        android:layout_marginVertical="24dp"
+        android:layout_marginVertical="16dp"
+        app:errorEnabled="true"
+        app:errorTextAppearance="@font/varela_round"
+        app:errorTextColor="@color/darkPink"
         app:layout_constraintLeft_toRightOf="@id/guidelineVertical10"
         app:layout_constraintRight_toLeftOf="@+id/guidelineVertical90"
         app:layout_constraintTop_toBottomOf="@id/editTextEmail">
@@ -85,10 +93,14 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/editTextComfirmPassword"
+        android:id="@+id/editTextConfirmPassword"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginVertical="24dp"
+        android:layout_marginVertical="16dp"
+        app:passwordToggleEnabled="true"
+        app:errorEnabled="true"
+        app:errorTextAppearance="@font/varela_round"
+        app:errorTextColor="@color/darkPink"
         app:layout_constraintLeft_toRightOf="@id/guidelineVertical10"
         app:layout_constraintRight_toLeftOf="@+id/guidelineVertical90"
         app:layout_constraintTop_toBottomOf="@id/editTextPassword">
@@ -113,7 +125,7 @@
         android:id="@+id/buttonSignIn"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="48dp"
+        android:layout_marginTop="24dp"
         android:background="@drawable/button_register"
         android:fontFamily="@font/varela_round"
         android:text="@string/register"
@@ -121,21 +133,20 @@
         android:textStyle="bold"
         app:layout_constraintLeft_toRightOf="@id/guidelineVertical10"
         app:layout_constraintRight_toLeftOf="@id/guidelineVertical90"
-        app:layout_constraintTop_toBottomOf="@id/editTextComfirmPassword" />
-
+        app:layout_constraintTop_toBottomOf="@id/editTextConfirmPassword" />
 
 
     <ImageButton
         android:id="@+id/buttonGoogle"
         android:layout_width="40dp"
         android:layout_height="40dp"
-        android:scaleType="centerCrop"
         android:background="@color/white"
+        android:scaleType="centerCrop"
         android:src="@drawable/google"
-        android:layout_marginVertical="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toRightOf="@id/guidelineVertical10"
-        app:layout_constraintRight_toLeftOf="@id/guidelineVertical90"/>
+        app:layout_constraintRight_toLeftOf="@id/guidelineVertical90"
+        app:layout_constraintTop_toBottomOf="@+id/buttonSignIn" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guidelineHorizontal32"
