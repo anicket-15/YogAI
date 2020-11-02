@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "560284317803",
+    "firebase_url": "https://android-demo-c1db0.firebaseio.com",
+    "project_id": "android-demo-c1db0",
+    "storage_bucket": "android-demo-c1db0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:560284317803:android:47ce04a9d0f188632f192e",
+        "android_client_info": {
+          "package_name": "com.anicket.yogai"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "560284317803-b80jiketdrvujkr6hijs9rog13lb7c46.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.android.firebasedemo",
+            "certificate_hash": "0054ee92a2db22a929394f752504c5ed59793f64"
+          }
+        },
+        {
+          "client_id": "560284317803-i4dc9ma4do3qq8o2t3kqflqpmt1cc8n8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB6CWa7ZXM8gpkoDUsJe4fHyOunsZppnug"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "560284317803-i4dc9ma4do3qq8o2t3kqflqpmt1cc8n8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
