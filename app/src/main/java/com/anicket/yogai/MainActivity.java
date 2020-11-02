@@ -48,21 +48,21 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void run() {
-                Boolean a=false;
+                //If User Account already created than go directly to main screen
+                Boolean flag=false;
                 fAuth=FirebaseAuth.getInstance();
                 if (fAuth.getCurrentUser() != null) {
-                    a=true;
-                    Log.d(TAG, "Current User " + fAuth.getCurrentUser().getUid());
+                    flag=true;
                     startActivity(new Intent(MainActivity.this, TemporaryActivity.class));
                     finish();
                 }
-                if(a==false) {
+                if(flag==false) {
                     Intent intent = new Intent(MainActivity.this, ChoiceScreen.class);
                     startActivity(intent);
                     finish();
                 }
             }
-        },8000);
+        },4000);
 
     }
 }
