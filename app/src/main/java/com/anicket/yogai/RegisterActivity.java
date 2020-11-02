@@ -16,6 +16,7 @@ import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
@@ -24,7 +25,13 @@ public class RegisterActivity extends AppCompatActivity {
     //Variable Declaration
     EditText mEmail,mPassword1,mPassword2;
     Button mRegisterBtn;
+    TextInputLayout editTextEmail, editTextPassword, editTextConfirmPassword;
     FirebaseAuth fAuth;
+
+    private boolean validateEmail(String email){
+        String regex = "^[\\w-_\\.+]*[\\w-_\\.]\\@([\\w]+\\.)+[\\w]+[\\w]$";
+        return email.matches(regex);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +42,9 @@ public class RegisterActivity extends AppCompatActivity {
         mPassword1=findViewById(R.id.password1);
         mPassword2=findViewById(R.id.password2);
         mRegisterBtn=findViewById(R.id.buttonSignIn);
+        editTextEmail = findViewById(R.id.editTextEmail);
+        editTextPassword = findViewById(R.id.editTextPassword);
+        editTextConfirmPassword = findViewById(R.id.editTextConfirmPassword);
 
         //Firebase Auth Instance
         fAuth=FirebaseAuth.getInstance();
@@ -47,24 +57,24 @@ public class RegisterActivity extends AppCompatActivity {
                 String password2=mPassword2.getText().toString().trim();
 
                 //Validation Check
-                if(TextUtils.isEmpty(email)){
-                    mEmail.setError("Email is required");
+                if(!validateEmail(email)){
+                    editTextEmail.setError("Valid Email is required");
                     return;
                 }
                 if(TextUtils.isEmpty(password1)){
-                    mPassword1.setError("Password is required");
+                    editTextPassword.setError("Password is required");
                     return;
                 }
                 if(TextUtils.isEmpty(password2)){
-                    mPassword2.setError("Password is required");
+                    editTextConfirmPassword.setError("Password is required");
                     return;
                 }
                 if(password1.length()<5 ){
-                    mPassword1.setError("Password must be greater than 4 digit");
+                    editTextPassword.setError("Password must not be less than 5 characters");
                     return;
                 }
                 if(!(password1.equals(password2))){
-                    mPassword2.setError("Password not matched ");
+                    editTextConfirmPassword.setError("Password's do not match ");
                     return;
                 }
 
@@ -85,9 +95,9 @@ public class RegisterActivity extends AppCompatActivity {
             }
         });
 
-
-
     }
+
+
 
     public void backButton(View view) {
         finish();
