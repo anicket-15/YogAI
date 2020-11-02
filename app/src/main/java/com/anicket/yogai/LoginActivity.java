@@ -84,4 +84,8 @@ public class LoginActivity extends AppCompatActivity {
     public void backButton(View view) {
         finish();
     }
+
+    public void resetPassword(View view) {
+        startActivity(new Intent(getApplicationContext(),ForgotPassword.class));
+    }
 }

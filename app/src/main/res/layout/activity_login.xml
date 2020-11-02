@@ -131,7 +131,8 @@
         style="@style/Widget.AppCompat.Button.Borderless"
         app:layout_constraintTop_toBottomOf="@id/btnSignIn"
         app:layout_constraintLeft_toRightOf="@id/guidelineVertical10"
-        app:layout_constraintRight_toLeftOf="@id/guidelineVertical90" />
+        app:layout_constraintRight_toLeftOf="@id/guidelineVertical90"
+        android:onClick="resetPassword"/>
 
 
     <ImageButton
