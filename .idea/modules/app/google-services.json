@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "159573842073",
+    "firebase_url": "https://yogai-a2ec6.firebaseio.com",
+    "project_id": "yogai-a2ec6",
+    "storage_bucket": "yogai-a2ec6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:159573842073:android:a114aefdca39b28b684008",
+        "android_client_info": {
+          "package_name": "com.anicket.yogai"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "159573842073-c3qhut4gmthsc9hr6pmk3tekie15qj0i.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.anicket.yogai",
+            "certificate_hash": "0054ee92a2db22a929394f752504c5ed59793f64"
+          }
+        },
+        {
+          "client_id": "159573842073-1f7tspcifvp2lrjmonaj2ckv61o89hbp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB6CWa7ZXM8gpkoDUsJe4fHyOunsZppnug"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "159573842073-1f7tspcifvp2lrjmonaj2ckv61o89hbp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
