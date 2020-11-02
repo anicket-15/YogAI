@@ -10,4 +10,6 @@
     <string name="confirm_password">Confirm Password</string>
     <string name="reset_password_email">Type Your Email</string>
     <string name="reset_password_link">Send Reset password Link</string>
+    <string name="reset_password">Reset Password</string>
+    <string name="enter_email_to_reset_password">Enter Email to reset password</string>
 </resources>

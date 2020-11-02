@@ -13,6 +13,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
@@ -70,7 +71,7 @@ public class LoginActivity extends AppCompatActivity {
                             startActivity(new Intent(getApplicationContext(),TemporaryActivity.class));
                         }
                         else {
-                            editTextPassword.setError(Objects.requireNonNull(task.getException()).getMessage());
+                            Toast.makeText(LoginActivity.this, Objects.requireNonNull(task.getException()).getMessage(), Toast.LENGTH_LONG).show();
                         }
                     }
                 });
@@ -87,5 +88,6 @@ public class LoginActivity extends AppCompatActivity {
 
     public void resetPassword(View view) {
         startActivity(new Intent(getApplicationContext(),ForgotPassword.class));
+        finish();
     }
 }

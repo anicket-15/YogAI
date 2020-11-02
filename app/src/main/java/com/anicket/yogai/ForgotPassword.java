@@ -3,6 +3,7 @@ package com.anicket.yogai;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -40,7 +41,7 @@ public class ForgotPassword extends AppCompatActivity {
         mResetBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String email = mEmail.getText().toString().trim();
+                final String email = mEmail.getText().toString().trim();
 
                 //Validation Check
                 if(!validateEmail(email)){
@@ -51,13 +52,14 @@ public class ForgotPassword extends AppCompatActivity {
                 fAuth.sendPasswordResetEmail(email).addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void aVoid) {
-                        Toast.makeText(ForgotPassword.this, "Reset Link Sent to your Mail", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(ForgotPassword.this, "Password Reset Link Sent to your Mail "+email, Toast.LENGTH_SHORT).show();
+                        startActivity(new Intent(ForgotPassword.this,LoginActivity.class));
+                        finish();
                     }
                 }).addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception e) {
                         Toast.makeText(ForgotPassword.this, "Reset Link Not Sent "+e.getMessage(), Toast.LENGTH_SHORT).show();
-
                     }
                 });
 
@@ -68,6 +70,11 @@ public class ForgotPassword extends AppCompatActivity {
     }
 
     public void backButton(View view) {
+        finish();
+    }
+
+    public void buttonSignIn(View view) {
+        startActivity(new Intent(ForgotPassword.this,LoginActivity.class));
         finish();
     }
 }
