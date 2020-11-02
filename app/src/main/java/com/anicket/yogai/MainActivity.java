@@ -6,13 +6,17 @@ import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.Log;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class MainActivity extends AppCompatActivity {
+
+    FirebaseAuth fAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,11 +44,23 @@ public class MainActivity extends AppCompatActivity {
         // Wait on splash Screen for 3000 ms and move to ChoiceScreen
         final Handler handler = new Handler();
         handler.postDelayed(new Runnable() {
+            private static final String TAG ="TAG";
+
             @Override
             public void run() {
-                Intent intent = new Intent(MainActivity.this,ChoiceScreen.class);
-                startActivity(intent);
-                finish();
+                Boolean a=false;
+                fAuth=FirebaseAuth.getInstance();
+                if (fAuth.getCurrentUser() != null) {
+                    a=true;
+                    Log.d(TAG, "Current User " + fAuth.getCurrentUser().getUid());
+                    startActivity(new Intent(MainActivity.this, TemporaryActivity.class));
+                    finish();
+                }
+                if(a==false) {
+                    Intent intent = new Intent(MainActivity.this, ChoiceScreen.class);
+                    startActivity(intent);
+                    finish();
+                }
             }
         },8000);
 

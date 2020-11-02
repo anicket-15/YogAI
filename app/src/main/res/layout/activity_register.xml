@@ -45,6 +45,7 @@
         app:layout_constraintTop_toBottomOf="@id/guidelineHorizontal32">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:drawableStart="@drawable/ic_round_alternate_email_24"
@@ -69,6 +70,7 @@
         app:layout_constraintTop_toBottomOf="@id/editTextEmail">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/password1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:drawableStart="@drawable/ic_round_lock_24"
@@ -92,6 +94,7 @@
         app:layout_constraintTop_toBottomOf="@id/editTextPassword">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/password2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:drawableStart="@drawable/ic_round_lock_24"
