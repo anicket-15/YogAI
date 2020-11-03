@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnFailureListener;
@@ -20,6 +21,7 @@ public class ForgotPassword extends AppCompatActivity {
     EditText mEmail;
     Button mResetBtn;
     TextInputLayout editTextEmail;
+    ProgressBar progressBar;
     FirebaseAuth fAuth;
 
     private boolean validateEmail(String email){
@@ -36,18 +38,23 @@ public class ForgotPassword extends AppCompatActivity {
         mEmail=findViewById(R.id.email);
         editTextEmail=findViewById(R.id.editTextEmail);
         mResetBtn=findViewById(R.id.forgotPasswordBtn);
+        progressBar=findViewById(R.id.progressBar);
 
         //Reset Button
         mResetBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                progressBar.setVisibility(View.VISIBLE);
                 final String email = mEmail.getText().toString().trim();
 
                 //Validation Check
                 if(!validateEmail(email)){
+                    progressBar.setVisibility(View.INVISIBLE);
                     editTextEmail.setError("Valid Email is required");
                     return;
                 }
+                progressBar.setVisibility(View.INVISIBLE);
                 //Send Reset Password Link
                 fAuth.sendPasswordResetEmail(email).addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
@@ -64,6 +71,7 @@ public class ForgotPassword extends AppCompatActivity {
                 });
 
             }
+
         });
 
 
@@ -74,6 +82,7 @@ public class ForgotPassword extends AppCompatActivity {
     }
 
     public void buttonSignIn(View view) {
+        progressBar.setVisibility(View.VISIBLE);
         startActivity(new Intent(ForgotPassword.this,LoginActivity.class));
         finish();
     }
