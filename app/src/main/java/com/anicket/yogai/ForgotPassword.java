@@ -45,7 +45,7 @@ public class ForgotPassword extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                progressBar.setVisibility(View.VISIBLE);
+
                 final String email = mEmail.getText().toString().trim();
 
                 //Validation Check
@@ -54,11 +54,12 @@ public class ForgotPassword extends AppCompatActivity {
                     editTextEmail.setError("Valid Email is required");
                     return;
                 }
-                progressBar.setVisibility(View.INVISIBLE);
+                progressBar.setVisibility(View.VISIBLE);
                 //Send Reset Password Link
                 fAuth.sendPasswordResetEmail(email).addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void aVoid) {
+                        progressBar.setVisibility(View.INVISIBLE);
                         Toast.makeText(ForgotPassword.this, "Password Reset Link Sent to your Mail "+email, Toast.LENGTH_SHORT).show();
                         startActivity(new Intent(ForgotPassword.this,LoginActivity.class));
                         finish();
@@ -66,6 +67,7 @@ public class ForgotPassword extends AppCompatActivity {
                 }).addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception e) {
+                        progressBar.setVisibility(View.INVISIBLE);
                         Toast.makeText(ForgotPassword.this, "Reset Link Not Sent "+e.getMessage(), Toast.LENGTH_SHORT).show();
                     }
                 });
