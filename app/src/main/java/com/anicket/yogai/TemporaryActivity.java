@@ -13,7 +13,6 @@ import com.google.firebase.auth.FirebaseAuth;
 public class TemporaryActivity extends AppCompatActivity {
 
     private GoogleSignInClient mGoogleSignInClient;
-    GoogleSignInAccount googleSignInAccount;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
