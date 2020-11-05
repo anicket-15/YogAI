@@ -26,6 +26,7 @@ public class RegisterActivity extends AppCompatActivity {
     EditText mEmail,mPassword1,mPassword2;
     Button mRegisterBtn;
     TextInputLayout editTextEmail, editTextPassword, editTextConfirmPassword;
+    ProgressBar progressBar;
     FirebaseAuth fAuth;
 
     private boolean validateEmail(String email){
@@ -45,6 +46,7 @@ public class RegisterActivity extends AppCompatActivity {
         editTextEmail = findViewById(R.id.editTextEmail);
         editTextPassword = findViewById(R.id.editTextPassword);
         editTextConfirmPassword = findViewById(R.id.editTextConfirmPassword);
+        progressBar = findViewById(R.id.progressBar);
 
         //Firebase Auth Instance
         fAuth=FirebaseAuth.getInstance();
@@ -78,10 +80,14 @@ public class RegisterActivity extends AppCompatActivity {
                     return;
                 }
 
+                //Progress Bar
+                progressBar.setVisibility(View.VISIBLE);
+
                 //Register the user in Firebase
                 fAuth.createUserWithEmailAndPassword(email,password1).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
+                        progressBar.setVisibility(View.INVISIBLE);
                         if(task.isSuccessful()) {
                             Toast.makeText(RegisterActivity.this, "Account Created", Toast.LENGTH_SHORT).show();
                             startActivity(new Intent(getApplicationContext(),TemporaryActivity.class));

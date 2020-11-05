@@ -6,6 +6,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -25,6 +26,7 @@ public class LoginActivity extends AppCompatActivity {
     EditText mEmail,mPassword1;
     Button mSignInBtn;
     TextInputLayout editTextEmail, editTextPassword, editTextConfirmPassword;
+    ProgressBar progressBar;
     FirebaseAuth fAuth;
 
 
@@ -41,6 +43,7 @@ public class LoginActivity extends AppCompatActivity {
         mEmail=findViewById(R.id.email);
         mPassword1=findViewById(R.id.password1);
         mSignInBtn=findViewById(R.id.btnSignIn);
+        progressBar=findViewById(R.id.progressBar);
 
         fAuth=FirebaseAuth.getInstance();
 
@@ -62,10 +65,14 @@ public class LoginActivity extends AppCompatActivity {
                     return;
                 }
 
+                //ProgressBar
+                progressBar.setVisibility(View.VISIBLE);
+
                 //Authenticate User
                 fAuth.signInWithEmailAndPassword(email,password1).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
+                        progressBar.setVisibility(View.INVISIBLE);
                         if(task.isSuccessful()){
                             Toast.makeText(LoginActivity.this,"Logged-in Successfully",Toast.LENGTH_SHORT).show();
                             startActivity(new Intent(getApplicationContext(),TemporaryActivity.class));
@@ -87,6 +94,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     public void resetPassword(View view) {
+        progressBar.setVisibility(View.VISIBLE);
         startActivity(new Intent(getApplicationContext(),ForgotPassword.class));
         finish();
     }
