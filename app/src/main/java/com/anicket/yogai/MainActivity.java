@@ -6,7 +6,6 @@ import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
-import android.util.Log;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ImageView;
@@ -53,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
                 fAuth=FirebaseAuth.getInstance();
                 if (fAuth.getCurrentUser() != null) {
                     flag=true;
-                    startActivity(new Intent(MainActivity.this, TemporaryActivity.class));
+                    startActivity(new Intent(MainActivity.this, HomeActivity.class));
                     finish();
                 }
                 if(flag==false) {

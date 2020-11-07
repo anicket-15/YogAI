@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/home"
+        android:icon="@drawable/ic_icons8_google_home_100"
+        android:title="Home"
+
+        app:cnb_iconColor="@color/darkGrey"/>
+    <item
+        android:id="@+id/meditation"
+        android:icon="@drawable/ic_icons8_floating_guru_100"
+        android:title="Meditation"
+        app:cnb_iconColor="@color/colorAccent"/>
+    <item
+        android:id="@+id/yoga"
+        android:icon="@drawable/ic_icons8_yoga_100_1"
+        android:title="Yoga"
+        app:cnb_iconColor="@android:color/holo_red_light"/>
+    <item
+        android:id="@+id/profile"
+        android:icon="@drawable/ic_icons8_male_user_100_1"
+        android:title="Profile"
+        app:cnb_iconColor="@color/colorPrimaryDark"/>
+</menu>

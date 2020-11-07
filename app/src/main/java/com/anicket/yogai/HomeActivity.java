@@ -7,13 +7,16 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.ismaeldivita.chipnavigation.ChipNavigationBar;
 
-public class TemporaryActivity extends AppCompatActivity {
+public class HomeActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_temporary);
+        setContentView(R.layout.activity_home);
+        ChipNavigationBar chipNavigationBar = findViewById(R.id.bottomNavigationBar);
+        chipNavigationBar.setItemSelected(R.id.home,true);
     }
 
     public void LogOut(View view) {
