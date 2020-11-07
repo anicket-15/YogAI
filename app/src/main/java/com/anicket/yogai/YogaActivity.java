@@ -4,21 +4,22 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 
-import com.google.firebase.auth.FirebaseAuth;
 import com.ismaeldivita.chipnavigation.ChipNavigationBar;
 
-public class HomeActivity extends AppCompatActivity {
+public class YogaActivity extends AppCompatActivity {
+
 
     ChipNavigationBar bottomNavigationBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home);
+        setContentView(R.layout.activity_yoga);
+        //Reference to the bottom Chip Navigation Bar
         bottomNavigationBar= findViewById(R.id.bottomNavigationBar);
-        bottomNavigationBar.setItemSelected(R.id.home,true);
+        //To set the current tile as selected
+        bottomNavigationBar.setItemSelected(R.id.yoga,true);
         // Listener to handle changes on selecting new tile
         bottomNavigationBar.setOnItemSelectedListener(new ChipNavigationBar.OnItemSelectedListener() {
             @Override
@@ -46,11 +47,5 @@ public class HomeActivity extends AppCompatActivity {
                 }
             }
         });
-    }
-
-    public void LogOut(View view) {
-        FirebaseAuth.getInstance().signOut();
-        startActivity(new Intent(getApplicationContext(),ChoiceScreen.class));
-        finish();
     }
 }
