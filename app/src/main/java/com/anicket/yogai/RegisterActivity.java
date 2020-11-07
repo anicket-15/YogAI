@@ -89,6 +89,8 @@ public class RegisterActivity extends AppCompatActivity {
                         if(task.isSuccessful()) {
                             Toast.makeText(RegisterActivity.this, "Account Created", Toast.LENGTH_SHORT).show();
                             startActivity(new Intent(getApplicationContext(), HomeActivity.class));
+                            //To Finish all the previous activities
+                            finishAffinity();
                         }
                         else{
                             Toast.makeText(RegisterActivity.this,"Error!"+task.getException().getMessage(),Toast.LENGTH_SHORT).show();
