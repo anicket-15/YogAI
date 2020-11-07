@@ -4,10 +4,8 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.nfc.Tag;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -90,7 +88,9 @@ public class RegisterActivity extends AppCompatActivity {
                         progressBar.setVisibility(View.INVISIBLE);
                         if(task.isSuccessful()) {
                             Toast.makeText(RegisterActivity.this, "Account Created", Toast.LENGTH_SHORT).show();
-                            startActivity(new Intent(getApplicationContext(),TemporaryActivity.class));
+                            startActivity(new Intent(getApplicationContext(), HomeActivity.class));
+                            //To Finish all the previous activities
+                            finishAffinity();
                         }
                         else{
                             Toast.makeText(RegisterActivity.this,"Error!"+task.getException().getMessage(),Toast.LENGTH_SHORT).show();
