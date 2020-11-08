@@ -12,4 +12,5 @@
     <string name="reset_password_link">Send Reset password Link</string>
     <string name="reset_password">Reset Password</string>
     <string name="enter_email_to_reset_password">Enter Email to reset password</string>
+    <string name="profile">PROFILE</string>
 </resources>
