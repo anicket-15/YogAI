@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="150dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="8dp"
+    android:elevation="100dp"
+    android:layout_marginVertical="8dp"
+    android:layout_marginHorizontal="16dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingVertical="4dp">
+
+
+
+        <Button
+            android:id="@+id/buttonLearn"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/guidelineVertical50"
+            android:text="Learn"
+            android:elevation="0dp"
+            android:textSize="16sp"
+            android:fontFamily="@font/varela_round"
+            android:textColor="@color/colorYoga"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textStyle="bold"
+            android:background="@android:color/transparent"
+            android:paddingHorizontal="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/guidelineHorizontal50" />
+
+
+        <Button
+            android:id="@+id/buttonLetsGo"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:text="Let's Go"
+            android:elevation="0dp"
+            android:textSize="16sp"
+            android:fontFamily="@font/varela_round"
+            android:textColor="@color/colorYogaDark"
+            android:textAlignment="center"
+            android:textStyle="bold"
+            android:textAllCaps="false"
+            android:background="@android:color/transparent"
+            android:paddingHorizontal="8dp"
+            app:layout_constraintLeft_toLeftOf="@id/guidelineVertical50"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/guidelineHorizontal50" />
+
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineVertical50"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.50" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineHorizontal50"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.80" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            android:layout_marginHorizontal="8dp"
+            app:layout_constraintBottom_toTopOf="@+id/guidelineHorizontal50"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:srcCompat="@drawable/tree_pose" />
+
+        <TextView
+            android:id="@+id/yogaName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/varela_round"
+            android:textColor="@color/colorYogaDark"
+            android:textSize="20sp"
+            tools:text="Tadasana"
+            app:layout_constraintLeft_toRightOf="@id/imageView"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/description"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="16dp"
+            android:ellipsize="end"
+            android:maxLines="3"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:text="Lorem Ipsum jshdsd jhdw wjdhwdwd jwhwd jhwdjwdw hwdwd jhwdwdh. jwdhwj jwhd"
+            app:layout_constraintLeft_toLeftOf="@id/yogaName"
+            app:layout_constraintStart_toEndOf="@+id/imageView"
+            app:layout_constraintTop_toBottomOf="@+id/yogaName" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.cardview.widget.CardView>

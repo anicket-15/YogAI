@@ -9,4 +9,8 @@
     <color name="darkPink">#FF0068</color>
     <color name="darkGrey">#3F3D56</color>
     <color name="purple">#6C63FF</color>
+    <color name="yoga_character_dark_purple">#AB3989</color>
+    <color name="yoga_character_light_purple">#c378cb</color>
+    <color name="colorYoga">#7f8b4b</color>
+    <color name="colorYogaDark">#514654</color>
 </resources>

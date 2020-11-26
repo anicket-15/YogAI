@@ -17,7 +17,7 @@
         android:id="@+id/yoga"
         android:icon="@drawable/ic_icons8_yoga_100_1"
         android:title="Yoga"
-        app:cnb_iconColor="@android:color/holo_red_light"/>
+        app:cnb_iconColor="@color/colorYoga"/>
     <item
         android:id="@+id/profile"
         android:icon="@drawable/ic_icons8_male_user_100_1"
