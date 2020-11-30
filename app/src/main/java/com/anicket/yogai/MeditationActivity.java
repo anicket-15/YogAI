@@ -16,6 +16,8 @@ public class MeditationActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_meditation);
 
+        this.getWindow().setStatusBarColor(getResources().getColor(R.color.meditationColor));
+
         bottomNavigationBar= findViewById(R.id.bottomNavigationBar);
         bottomNavigationBar.setItemSelected(R.id.meditation,true);
         // Listener to handle changes on selecting new tile
