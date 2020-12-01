@@ -1,17 +1,25 @@
 package com.anicket.yogai;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
+import android.Manifest;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.google.firebase.auth.FirebaseAuth;
+
+import java.util.Arrays;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -20,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
 
         // To handle notch displays (Full Screen Splash Screen)
         requestWindowFeature(Window.FEATURE_NO_TITLE);
@@ -34,6 +43,8 @@ public class MainActivity extends AppCompatActivity {
 
 
         setContentView(R.layout.activity_main);
+
+
 
 
         // Set Animated GIF as Input to ImageView using Glide Library
@@ -64,4 +75,5 @@ public class MainActivity extends AppCompatActivity {
         },4000);
 
     }
+
 }

@@ -29,7 +29,10 @@ public class YogaActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_yoga);
 
+
         this.getWindow().setStatusBarColor(getResources().getColor(R.color.colorYoga));
+
+
 
         //Reference to the bottom Chip Navigation Bar
         bottomNavigationBar= findViewById(R.id.bottomNavigationBar);
