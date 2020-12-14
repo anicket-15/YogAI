@@ -12,7 +12,7 @@
         android:id="@+id/meditation"
         android:icon="@drawable/ic_icons8_floating_guru_100"
         android:title="Meditation"
-        app:cnb_iconColor="@color/colorAccent"/>
+        app:cnb_iconColor="@color/meditationColor"/>
     <item
         android:id="@+id/yoga"
         android:icon="@drawable/ic_icons8_yoga_100_1"
