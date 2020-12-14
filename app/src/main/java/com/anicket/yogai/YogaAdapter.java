@@ -49,6 +49,15 @@ public class YogaAdapter extends FirebaseRecyclerAdapter<YogaPose,YogaAdapter.Yo
                 view.getContext().startActivity(youtubeIntent);
             }
         });
+        holder.buttonLetsGo.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Intent cameraIntent  = new Intent(view.getContext(),CameraActivity.class);
+                        view.getContext().startActivity(cameraIntent);
+                    }
+                }
+        );
     }
 
     @NonNull
