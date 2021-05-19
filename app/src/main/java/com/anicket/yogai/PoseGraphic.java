@@ -34,7 +34,7 @@ public class PoseGraphic extends GraphicOverlay.Graphic {
         leftPaint = new Paint();
         leftPaint.setColor(Color.GREEN);
         rightPaint = new Paint();
-        rightPaint.setColor(Color.YELLOW);
+        rightPaint.setColor(Color.RED);
     }
 
     @Override

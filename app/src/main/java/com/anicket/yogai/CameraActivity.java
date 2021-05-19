@@ -27,11 +27,15 @@ import com.google.mlkit.vision.common.InputImage;
 import com.google.mlkit.vision.pose.Pose;
 import com.google.mlkit.vision.pose.PoseDetection;
 import com.google.mlkit.vision.pose.PoseDetector;
+import com.google.mlkit.vision.pose.PoseLandmark;
 import com.google.mlkit.vision.pose.defaults.PoseDetectorOptions;
 
+import java.util.Objects;
 import java.util.concurrent.Executor;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+
+import static java.lang.Math.atan2;
 
 public class CameraActivity extends AppCompatActivity {
 
@@ -45,6 +49,20 @@ public class CameraActivity extends AppCompatActivity {
 
     public CameraActivity(){
         cameraSide = CameraSelector.LENS_FACING_FRONT; // Front Camera
+    }
+
+    static double getAngle(PoseLandmark firstPoint, PoseLandmark midPoint, PoseLandmark lastPoint) {
+        double result =
+                Math.toDegrees(
+                        atan2(lastPoint.getPosition().y - midPoint.getPosition().y,
+                                lastPoint.getPosition().x - midPoint.getPosition().x)
+                                - atan2(firstPoint.getPosition().y - midPoint.getPosition().y,
+                                firstPoint.getPosition().x - midPoint.getPosition().x));
+        result = Math.abs(result); // Angle should never be negative
+        if (result > 180) {
+            result = (360.0 - result); // Always get the acute representation of the angle
+        }
+        return result;
     }
 
     @Override
@@ -133,6 +151,11 @@ public class CameraActivity extends AppCompatActivity {
                                         @Override
                                         public void onSuccess(Pose pose) {
                                             try {
+                                                double rightHandAngle = getAngle(
+                                                        Objects.requireNonNull(pose.getPoseLandmark(PoseLandmark.RIGHT_HIP)),
+                                                        Objects.requireNonNull(pose.getPoseLandmark(PoseLandmark.RIGHT_KNEE)),
+                                                        Objects.requireNonNull(pose.getPoseLandmark(PoseLandmark.RIGHT_ANKLE)));
+                                                Toast.makeText(CameraActivity.this, rightHandAngle+"", Toast.LENGTH_SHORT).show();
                                                 graphicOverlay.post(
                                                         new Runnable() {
                                                             @Override
