@@ -63,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
                 fAuth=FirebaseAuth.getInstance();
                 if (fAuth.getCurrentUser() != null) {
                     flag=true;
-                    startActivity(new Intent(MainActivity.this, HomeActivity.class));
+                    startActivity(new Intent(MainActivity.this, MeditationActivity.class));
                     finish();
                 }
                 if(flag==false) {

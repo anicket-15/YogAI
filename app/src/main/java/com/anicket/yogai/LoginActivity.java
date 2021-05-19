@@ -89,7 +89,7 @@ public class LoginActivity extends AppCompatActivity {
                         progressBar.setVisibility(View.INVISIBLE);
                         if(task.isSuccessful()){
                             Toast.makeText(LoginActivity.this,"Logged-in Successfully",Toast.LENGTH_SHORT).show();
-                            startActivity(new Intent(getApplicationContext(), HomeActivity.class));
+                            startActivity(new Intent(getApplicationContext(), MeditationActivity.class));
                             //to finish all the previous activities
                             finishAffinity();
                         }
@@ -164,7 +164,7 @@ public class LoginActivity extends AppCompatActivity {
                             // Sign in success, update UI with the signed-in user's information
                             Log.d(TAG, "signInWithCredential:success");
                             FirebaseUser user = fAuth.getCurrentUser();
-                            startActivity(new Intent(getApplicationContext(),HomeActivity.class));
+                            startActivity(new Intent(getApplicationContext(),MeditationActivity.class));
 
                         } else {
                             // If sign in fails, display a message to the user.

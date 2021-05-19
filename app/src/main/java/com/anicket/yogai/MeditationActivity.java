@@ -72,11 +72,11 @@ public class MeditationActivity extends AppCompatActivity {
             @Override
             public void onItemSelected(int i) {
                 switch(i) {
-                    case R.id.home :
-                        startActivity(new Intent(getApplicationContext(),HomeActivity.class));
-                        overridePendingTransition(0,0);
-                        finish();
-                        break;
+//                    case R.id.home :
+//                        startActivity(new Intent(getApplicationContext(),HomeActivity.class));
+//                        overridePendingTransition(0,0);
+//                        finish();
+//                        break;
 
                     case R.id.meditation :
                         startActivity(new Intent(getApplicationContext(),MeditationActivity.class));
@@ -90,11 +90,11 @@ public class MeditationActivity extends AppCompatActivity {
                         finish();
                         break;
 
-                    case R.id.profile :
-                        startActivity(new Intent(getApplicationContext(),ProfileActivity.class));
-                        overridePendingTransition(0,0);
-                        finish();
-                        break;
+//                    case R.id.profile :
+//                        startActivity(new Intent(getApplicationContext(),ProfileActivity.class));
+//                        overridePendingTransition(0,0);
+//                        finish();
+//                        break;
                 }
             }
         });
